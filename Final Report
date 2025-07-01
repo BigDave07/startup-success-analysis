@@ -1,0 +1,76 @@
+ Exploratory Data Analysis on Startup Success and Failure
+ Course: Applied Data Science Capstone (Coursera)
+Learner: David Oladipupo
+Dataset: Big Startup Success/Failure Dataset from Crunchbase
+
+ 1. Dataset Summary
+This dataset, sourced from Crunchbase, contains detailed information on over 66,000 startups, including both
+successful and failed ventures. Each row represents a startup, with columns capturing attributes such as
+funding, founding date, industry, employee size, and outcome.
+Key Columns:
+- name: Startup name
+- status: Outcome (operating, closed, acquired, or ipo)
+- category_list: Industry sector(s)
+- country_code, state_code: Location
+- funding_total_usd: Total funding in USD
+- founded_at, last_funding_at: Key dates
+- employee_range: Size of the workforce
+- funding_rounds, milestones: Activity and achievements
+
+ 2. Data Exploration Plan
+The main objective is to uncover the key factors influencing startup success or failure.
+We aimed to answer:
+- Are successful startups better funded?
+- Does the founding year affect survival?
+- Do certain industries or countries produce more resilient startups?
+Steps:
+1. Clean and summarize data
+ Exploratory Data Analysis on Startup Success and Failure
+2. Visualize distributions
+3. Engineer new features
+4. Form hypotheses and test
+
+ 3. Data Cleaning & Feature Engineering
+Cleaning:
+- Converted funding_total_usd and dates to appropriate formats
+- Handled missing values (NaN for missing funding; no closed_at column present)
+Feature Engineering:
+- founded_year: Extracted from founded_at
+- lifespan_years: Difference between last_funding_at and founded_at
+- is_operating: Binary flag (1 if operating, 0 if closed/other)
+
+ 4. Exploratory Data Analysis (EDA)
+Startup Outcome Distribution
+Most startups are still operating, but a significant number have closed.
+Funding vs Status
+- IPO startups are significantly better funded
+- Some failed startups raised large funds, but generally higher funding boosts survival odds
+Country-wise Startup Distribution
+- USA dominates startup scene
+- Other countries show higher failure percentages
+Founding Year Trends
+- Peak between 20052015 (global tech boom)
+- Startups after 2015 show less survival (may reflect incomplete data)
+ Exploratory Data Analysis on Startup Success and Failure
+
+ 5. Hypothesis Testing
+H1: Funding Impacts Success
+- H0: No difference in funding between closed and operating startups
+- Result: P-value < 0.0001 Reject H0
+H2: Lifespan and Outcome
+- H0: Failed and operating startups have same average lifespan
+- Result: P-value < 0.001 Reject H0
+H3: Industry Influences Outcome
+- H0: Industry and outcome are independent
+- Result: P-value < 0.001 Reject H0
+
+ 6. Key Findings & Insights
+- High funding and longer lifespan are strong predictors of startup survival
+- Industry and geography play a role
+- Most startups were founded during tech boom years
+- Startups in the US have higher survival rates
+
+ Conclusion
+This EDA has uncovered clear patterns explaining startup outcomes. It demonstrates core data science skills:
+data cleaning, visualization, feature engineering, and hypothesis testingvaluable for real-world business
+applications.
